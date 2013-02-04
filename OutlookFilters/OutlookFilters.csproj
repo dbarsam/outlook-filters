@@ -182,6 +182,7 @@
     <Compile Include="Actions\Action.cs" />
     <Compile Include="Actions\ActionList.cs" />
     <Compile Include="Actions\IAction.cs" />
+    <Compile Include="Actions\MoveAction.cs" />
     <Compile Include="Conditions\ConditionExpression.cs" />
     <Compile Include="Conditions\Condition.cs" />
     <Compile Include="Conditions\ICondition.cs" />
