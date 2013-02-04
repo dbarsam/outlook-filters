@@ -38,7 +38,7 @@ namespace OutlookFilters
 
             if (newMail != null)
             {
-                _Filters.Any(r => r.Process(newMail) && r.AbortRuleProcessing);
+                _Filters.Any(r => r.Process(newMail) && r.CanAbortProcessing);
             }
         }
 

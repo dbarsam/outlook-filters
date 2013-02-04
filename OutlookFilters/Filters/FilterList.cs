@@ -10,7 +10,7 @@ namespace OutlookFilters.Filters
         #region Public Methods
         public bool Process(Outlook.MailItem item)
         {
-            return this.Any(r => r.Process(item) && r.AbortRuleProcessing);
+            return this.Any(r => r.Process(item) && r.CanAbortProcessing);
         }
         #endregion
     }

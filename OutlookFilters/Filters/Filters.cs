@@ -10,7 +10,7 @@ namespace OutlookFilters.Filters
         #region Public Properties
         public string Label { get; set; }
         public bool Enabled { get; set; }
-        public bool AbortRuleProcessing { get; set; }
+        public bool CanAbortProcessing { get; set; }
         public ConditionExpression Conditions { get; set; }
         public ActionList Actions { get; set; }
         #endregion        
@@ -18,7 +18,7 @@ namespace OutlookFilters.Filters
         public Filter()
         {
             Label = String.Empty;
-            AbortRuleProcessing = false;
+            CanAbortProcessing = false;
             Conditions = new ConditionExpression();
             Actions = new ActionList();
         }
