@@ -4,6 +4,7 @@ using Microsoft.Office.Interop.Outlook;
 namespace OutlookFilters.Conditions
 {
     [
+    XmlInclude(typeof(TextMatch)),
     XmlInclude(typeof(ConditionExpression))
     ]
     public abstract class Condition : ICondition

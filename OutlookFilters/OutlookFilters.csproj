@@ -185,6 +185,7 @@
     <Compile Include="Conditions\ConditionExpression.cs" />
     <Compile Include="Conditions\Condition.cs" />
     <Compile Include="Conditions\ICondition.cs" />
+    <Compile Include="Conditions\TextMatch.cs" />
     <Compile Include="Filters\FilterList.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
