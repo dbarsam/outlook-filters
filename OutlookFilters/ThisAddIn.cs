@@ -81,5 +81,12 @@ namespace OutlookFilters
         }
         
         #endregion
+
+        #region Ribbon Implementation
+        protected override Microsoft.Office.Core.IRibbonExtensibility CreateRibbonExtensibilityObject()
+        {
+            return new OutlookFilters.Ribbons.Ribbon();
+        }
+        #endregion
     }
 }

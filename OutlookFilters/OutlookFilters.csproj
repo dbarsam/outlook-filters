@@ -200,6 +200,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Ribbons\RibbonUI.resx">
+      <DependentUpon>RibbonUI.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="OutlookFilters_TemporaryKey.pfx" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -210,6 +213,13 @@
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
     <Compile Include="Filters\Filters.cs" />
+    <Compile Include="Ribbons\Ribbon.cs" />
+    <Compile Include="Ribbons\RibbonUI.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Ribbons\RibbonUI.Designer.cs">
+      <DependentUpon>RibbonUI.cs</DependentUpon>
+    </Compile>
     <Compile Include="ThisAddIn.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -220,6 +230,10 @@
       <DependentUpon>ThisAddIn.Designer.xml</DependentUpon>
     </Compile>
     <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Ribbons\ReadMe.txt" />
+    <EmbeddedResource Include="Ribbons\Ribbon.xml" />
   </ItemGroup>
   <ItemGroup />
   <!-- Include the build rules for a C# project. -->

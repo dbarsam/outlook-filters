@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<customUI xmlns="http://schemas.microsoft.com/office/2009/07/customui" onLoad="Ribbon_Load">
+  <ribbon>
+    <tabs>
+      <tab id="tabOutlookFilters" label="Outlook Filters">
+      </tab>
+    </tabs>
+  </ribbon>
+  <backstage>
+    <tab id="tabOutlookFilterBackstage" label="Outlook Filters" columnWidthPercent="30" insertAfterMso="TabInfo" visible="true" >
+    </tab>
+  </backstage>
+</customUI>
+
