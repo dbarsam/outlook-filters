@@ -82,6 +82,20 @@ namespace OutlookFilters
         
         #endregion
 
+        #region Test Methods
+        private void TestSerialization()
+        {
+            var rule = new Filter() { Enabled = true, CanAbortProcessing = false, Label = "Test" };
+            rule.Actions.Add(new OutlookFilters.Actions.MoveAction() { DestinationFolder = this.Application.Session.GetDefaultFolder(Outlook.OlDefaultFolders.olFolderInbox) });
+            rule.Conditions.Conditions.Add(new OutlookFilters.Conditions.TextMatch() { SearchText = "Text", MatchMethod = Conditions.TextMatch.TextMatchType.Exact, FieldType = Conditions.TextMatch.TextFieldType.Subject });
+
+            _Filters.Add(rule);
+
+            SaveFilters("C:\\filterlist.xml");
+            LoadFilters("C:\\filterlist.xml");
+        }
+        #endregion
+
         #region Ribbon Implementation
         protected override Microsoft.Office.Core.IRibbonExtensibility CreateRibbonExtensibilityObject()
         {
