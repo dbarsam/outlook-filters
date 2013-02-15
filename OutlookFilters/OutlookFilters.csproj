@@ -130,15 +130,19 @@
   -->
   <ItemGroup>
     <Reference Include="Accessibility" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xaml" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Microsoft.Office.Tools.v4.0.Framework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
@@ -187,7 +191,11 @@
     <Compile Include="Conditions\Condition.cs" />
     <Compile Include="Conditions\ICondition.cs" />
     <Compile Include="Conditions\TextMatch.cs" />
+    <Compile Include="Windows\FilterEditor.xaml.cs">
+      <DependentUpon>FilterEditor.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Filters\FilterList.cs" />
+    <Compile Include="OfficeHelpers\OfficeWin32Window.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -233,9 +241,17 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Ribbons\ReadMe.txt" />
-    <EmbeddedResource Include="Ribbons\Ribbon.xml" />
+    <EmbeddedResource Include="Ribbons\Ribbon.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />
+  <ItemGroup>
+    <Page Include="Windows\FilterEditor.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
   <!-- Include the build rules for a C# project. -->
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- Include additional build rules for an Office application add-in. -->

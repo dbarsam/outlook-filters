@@ -2,10 +2,16 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Text;
 using System.Reflection;
 using System.Runtime.InteropServices;
-using System.Text;
+using System.Windows;
+using System.Windows.Interop;
+using Microsoft.Office.Tools.Ribbon;
+using OutlookFilters.Windows;
+using OutlookFilters.OfficeHelpers;
 using Office = Microsoft.Office.Core;
+
 
 // TODO:  Follow these steps to enable the Ribbon (XML) item:
 
@@ -50,17 +56,33 @@ namespace OutlookFilters.Ribbons
         #endregion
 
         #region Ribbon Callbacks
-        //Create callback methods here. For more information about adding callback methods, select the Ribbon XML item in Solution Explorer and then press F1
-
         public void Ribbon_Load(Office.IRibbonUI ribbonUI)
         {
             this.ribbon = ribbonUI;
         }
+        
+        public void ButtonCreateFilterClick(Office.IRibbonControl control)
+        {
+            var dlg = new FilterEditor();
+            ShowModalWindow(dlg);
+        }
 
+        public void ButtonManageFiltersClick(Office.IRibbonControl control)
+        {
+            var dlg = new FilterEditor();
+            ShowModalWindow(dlg);
+        }
         #endregion
 
         #region Helpers
-
+        private static void ShowModalWindow(Window window)
+        {
+            dynamic activeWindow = Globals.ThisAddIn.Application.ActiveWindow();
+            var outlookHwnd = new OfficeWin32Window(activeWindow).Handle;
+            var wih = new WindowInteropHelper(window);
+            wih.Owner = outlookHwnd;
+            window.ShowDialog();
+        }
         private static string GetResourceText(string resourceName)
         {
             Assembly asm = Assembly.GetExecutingAssembly();

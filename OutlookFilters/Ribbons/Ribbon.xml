@@ -3,6 +3,10 @@
   <ribbon>
     <tabs>
       <tab id="tabOutlookFilters" label="Outlook Filters">
+        <group id="groupEdit" label="Edit Filters">
+          <button id="buttonCreateFilter" imageMso="FilterNew" onAction="ButtonCreateFilterClick" label="Create Filter..." />
+          <button id="buttonManageFilters" imageMso="AdvancedFilterDialog" onAction="ButtonManageFiltersClick" label="Manager Filters..." />
+        </group>
       </tab>
     </tabs>
   </ribbon>

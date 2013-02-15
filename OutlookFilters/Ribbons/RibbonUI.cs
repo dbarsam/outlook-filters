@@ -8,5 +8,14 @@ namespace OutlookFilters.Ribbons
 {
     public partial class RibbonUI
     {
+        private void buttonCreateFilter_Click(object sender, RibbonControlEventArgs e)
+        {
+
+        }
+
+        private void buttonManageFilters_Click(object sender, RibbonControlEventArgs e)
+        {
+
+        }
     }
 }

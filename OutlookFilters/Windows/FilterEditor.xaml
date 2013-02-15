@@ -1,0 +1,16 @@
+﻿<Window    
+    x:Class="OutlookFilters.Windows.FilterEditor"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+    mc:Ignorable="d" Title="Filter Editor..." WindowStartupLocation="CenterOwner"
+    WindowStyle="ToolWindow"
+    ResizeMode="CanResizeWithGrip"
+    UseLayoutRounding="True" Height="300" Width="600">
+
+    <Grid>
+        <Button Content="OK" Height="23" HorizontalAlignment="Right" IsDefault="True" Margin="0,0,93,12" Name="OKButton" VerticalAlignment="Bottom" Width="75" Click="OKButton_Click" />
+        <Button Content="Cancel" Height="23" HorizontalAlignment="Right" IsCancel="True" Margin="0,0,12,12" Name="CancelButton" VerticalAlignment="Bottom" Width="75" Click="CancelButton_Click" />
+    </Grid>
+</Window>
